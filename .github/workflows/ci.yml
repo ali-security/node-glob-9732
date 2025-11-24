@@ -8,13 +8,13 @@ jobs:
       matrix:
         node-version: [18.x, 20.x, 21.x]
         platform:
-        - os: ubuntu-latest
+        - os: ubuntu-24.04
           shell: bash
-        - os: macos-latest
+        - os: macos-14
           shell: bash
-        - os: windows-latest
+        - os: windows-2022
           shell: bash
-        - os: windows-latest
+        - os: windows-2022
           shell: powershell
       fail-fast: false
 
@@ -37,9 +37,9 @@ jobs:
         run: npm ci
 
       - name: Run Tests Windows (incomplete coverage)
-        if: matrix.platform.os == 'windows-latest'
+        if: matrix.platform.os == 'windows-2022'
         run: npm test -- -c -t0 --allow-incomplete-coverage
 
       - name: Run Tests Unix (complete coverage)
-        if: matrix.platform.os != 'windows-latest'
+        if: matrix.platform.os != 'windows-2022'
         run: npm test -- -c -t0
