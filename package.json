@@ -5,7 +5,7 @@
   },
   "name": "glob",
   "description": "the most correct and second fastest glob implementation in JavaScript",
-  "version": "10.4.5",
+  "version": "10.4.5-sp1",
   "type": "module",
   "tshy": {
     "main": true,
@@ -21,12 +21,10 @@
     "./package.json": "./package.json",
     ".": {
       "import": {
-        "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
       },
       "require": {
-        "source": "./src/index.ts",
         "types": "./dist/commonjs/index.d.ts",
         "default": "./dist/commonjs/index.js"
       }
